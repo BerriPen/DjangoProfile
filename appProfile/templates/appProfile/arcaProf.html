@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>  
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+ <div id="header">
+    <div class="container">
+        <nav>
+            {% load static %}
+            <img src="{% static 'logo.png' %}" class="logo">
+        </nav>
+        <div class="header-text">
+            <h1>Hi, I'm<span> Nyza Rabi Arca</span><br>From Tacloban City</h1>
+        </div>
+    </div> 
+ <div id="About Me">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">  
+                {% load static %} 
+                <img src="{% static 'about me.jpg' %}">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>Hi everyone, I Am Nyza R. Arca, A simple girl living with a simple life. I Am 20 years of age and I live in Palo, leyte.
+                     I chose this picture because i missed my Grandpa!</p>
+                <nav class="navbar"></nav>
+            <div class="about-col-3">
+                <h1>My Hobbies</h1>
+                    <div class="hobby-item">
+                        <h2>Drawing</h2>
+                        {% load static %}
+                        <img src="{% static 'drawing.jpg' %}" alt="Drawing" >
+                        <p>I like drawing anime and dress.</p>
+                    </div>
+                    <div class="about-col-4">
+                                <h2>Watching Movies</h2>
+                        {% load static %}
+                        <img src="{% static 'horror.jpg' %}" alt="Watching Movies" width="800px" height="500px">
+                        <p>Watching movies like Horrors</p>
+                    </div>                         
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

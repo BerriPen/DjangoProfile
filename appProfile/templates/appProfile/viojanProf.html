@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: antiquewhite;
+        }
+        header {
+            background-color: #E6FAD7;
+            color: #320F4D;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav {
+            text-align: center;
+        }
+        nav a {
+            color: #320F4D;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        nav a:hover {
+            color: #F1C993;
+        }
+        section {
+            padding: 50px;
+            text-align: center;
+            background-color: #f4d4aa;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.5s ease;
+        }
+        section:hover {
+            transform: translateX(10px);
+        }
+        #home .flashcard {
+            background-color: #FAD7E6;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+            max-width: 800px;
+            margin-top: 120px;
+        }
+        #about .flashcard {
+            background-color: #EBD7FA;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+            max-width: 800px;
+            margin-top: 120px;
+        }
+        #dream .flashcard {
+            background-color: #D7FAEB;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+            max-width: 800px;
+            margin-top: 120px;
+        }
+        #song .flashcard{
+            background-color: #d7e6fa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+            max-width: 800px;
+            margin-top: 120px;
+        }
+        #home .flashcard img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 8px;
+            align-self: flex-start;
+        }
+        #about .flashcard img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 8px;
+            align-self: flex-start;
+        }
+        #dream .flashcard img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 8px;
+            align-self: flex-start;
+        }
+        #home .flashcard-text {
+            width: calc(100% - 220px);
+            text-align: left;
+            padding-left: 20px;
+        }
+        #about .flashcard-text {
+            width: calc(100% - 220px);
+            text-align: left;
+            padding-left: 20px;
+        }
+        #dream .flashcard-text {
+            width: calc(100% - 220px);
+            text-align: left;
+            padding-left: 20px;
+        }
+        #song .flashcard-text {
+            width: calc(100% - 220px);
+            text-align: left;
+            padding-left: 20px;
+        }
+        .home-text {
+            text-align: justify;
+            line-height: 1.5;
+            transition: all 0.5s ease; 
+            opacity: 0;
+            transform: translateY(20px); 
+        }
+        #home:hover .home-text {
+            opacity: 1; 
+            transform: translateY(0);
+        }
+        .about-text {
+            text-align: justify;
+            line-height: 1.5;
+            transition: all 0.5s ease; 
+            opacity: 0;
+            transform: translateY(20px); 
+        }
+        #about:hover .about-text {
+            opacity: 1; 
+            transform: translateY(0);
+        }
+        .dream-text {
+            text-align: justify;
+            line-height: 1.5;
+            transition: all 0.5s ease; 
+            opacity: 0;
+            transform: translateY(20px); 
+        }
+        #dream:hover .dream-text {
+            opacity: 1; 
+            transform: translateY(0);
+        }
+        .song-text {
+            text-align: justify;
+            line-height: 1.5;
+            transition: all 0.5s ease; 
+            opacity: 0;
+            transform: translateY(20px); 
+        }
+        #song:hover .song-text {
+            opacity: 1; 
+            transform: translateY(0);
+        }
+        #song video {
+            width: 250%;
+            max-width: 500px;
+            height: auto;
+            margin-top: 10px;   
+            transition: all 0.5s ease;
+        }
+    </style>
+
+</head>
+<body>
+
+<header>
+    <h1>私自身も私も</h1>
+    <nav>
+        <a href="#home">Home</a> |
+        <a href="#about">About</a> |
+        <a href="#dream">Dream</a> |
+        <a href="#song">Song</a>
+    </nav>
+</header>
+
+<section id="home">
+    <div class="flashcard">
+        {% load static %}
+        <img src="{% static 'me.jpeg'%}" alt="Roselyn Mae Viojan" style="max-width: 200px; align-self: flex-start;">
+        <div class="flashcard-text">
+            <h2>こんにちは
+                Kon'nichiwa
+            </h2>
+            <p class="home-text">Greetings! Welcome to 私自身も私も! Step inside and get to know me a little better. Here, you'll find a glimpse into my world—my interests, passions, and perhaps a few surprises along the way. Take a moment to browse, linger, and make yourself comfortable. I'm thrilled to have you here, and I hope you enjoy your visit!</p>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <div class="flashcard">
+        {% load static %}
+        <img src="{% static 'na.jpg' %}" alt="Roselyn Mae Viojan" style="max-width: 200px; align-self: flex-start;">
+        <div class="flashcard-text">
+            <h2>Roselyn Mae Viojan</h2>
+            <p class="about-text">Hey there, currently in my second year of college pursuing a Bachelor's degree in Information Technology. From a young age, I've been drawn to the wonders of history, space exploration, and the mysteries of the ocean depths. My curiosity extends even to the intricate workings of the human respiratory system. When I'm not immersed in those fascinating subjects, you can find me lost in the colorful world of manhwas and novels, or paging through encyclopedias to satisfy my thirst for knowledge. Oh, and did I mention I enjoy baking delicious cakes and cookies in my free time? On top of all that, I'm passionate about taekwondo, channeling my energy into disciplined practice. Looking forward to swapping stories and learning from each other's passions!</p>
+        </div>
+    </div>
+</section>
+
+<section id="dream">
+    <div class="flashcard">
+        {% load static %}
+        <img src="{% static 'ar.jpg' %}" alt="Archeology" style="max-width: 200px; align-self: flex-start;">
+        <div class="flashcard-text">
+            <h2>Archaeologist</h2>
+            <p class="dream-text">Welcome to my little corner of the internet, where I'm excited to open up about my dream of becoming an archaeologist. Imagine sitting across from me, sipping a warm cup of coffee, as I share the story of how this passion first ignited within me. From childhood adventures digging in the backyard to the awe-inspiring moments of uncovering ancient artifacts, I've been on a journey filled with curiosity and wonder. Here, I invite you to join me as I delve deeper into the fascinating world of archaeology, sharing not just the facts, but the emotions, challenges, and triumphs that come with pursuing a dream. So, pull up a chair, get comfy, and let's chat about our shared love for unearthing the secrets of the past!</p>
+        </div>
+    </div>
+</section>
+
+<section id="song">
+    <div class="flashcard">
+        {% load static %}    
+        <video controls autoplay style="max-width: 300px; align-self: flex-start;">
+            <source src="{% static 'imagine_dragons_demons.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="flashcard-text">
+            <h2>Imagine Dragons - Demons</h2><br>
+            <p>Lyrics:</p>
+            <p class="song-text">When the days are cold<br>
+                And the cards all fold<br>
+                And the saints we see are all made of gold<br>
+                When your dreams all fail<br>
+                And the ones we hail<br>
+                Are the worst of all, and the blood's run stale</p>
+            <p class="song-text">I wanna hide the truth<br>
+                I wanna shelter you<br>
+                But with the beast inside<br>
+                There's nowhere we can hide<br>
+                No matter what we breed<br>
+                We still are made of greed<br>
+                This is my kingdom come<br>
+                This is my kingdom come</p>
+            <p class="song-text">When you feel my heat, look into my eyes<br>
+                It's where my demons hide<br>
+                It's where my demons hide<br>
+                Don't get too close, it's dark inside<br>
+                It's where my demons hide<br>
+                It's where my demons hide</p>
+            <p class="song-text">At the curtain's call<br>
+                It's the last of all<br>
+                When the lights fade out, all the sinners crawl<br>
+                So they dug your grave<br>
+                And the masquerade<br>
+                Will come calling out at the mess you've made</p>
+            <p class="song-text">Don't wanna let you down<br>
+                But I am hell-bound<br>
+                Though this is all for you<br>
+                Don't wanna hide the truth<br>
+                No matter what we breed<br>
+                We still are made of greed<br>
+                This is my kingdom come<br>
+                This is my kingdom come</p>
+            <p class="song-text">When you feel my heat, look into my eyes<br>
+                It's where my demons hide<br>
+                It's where my demons hide<br>
+                Don't get too close, it's dark inside<br>
+                It's where my demons hide<br>
+                It's where my demons hide</p>
+            <p class="song-text">They say it's what you make<br>
+                I say it's up to fate<br>
+                It's woven in my soul<br>
+                I need to let you go<br>
+                Your eyes, they shine so bright<br>
+                I wanna save that light<br>
+                I can't escape this now<br>
+                Unless you show me how</p>
+            <p class="song-text">When you feel my heat, look into my eyes<br>
+                It's where my demons hide<br>
+                It's where my demons hide<br>
+                Don't get too close, it's dark inside<br>
+                It's where my demons hide<br>
+                It's where my demons hide</p>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
